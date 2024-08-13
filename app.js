@@ -21,6 +21,7 @@ app.use(bodyParser.json());
 app.use(
   cors({
     origin: [
+      "https://main.d10x8axsum38x.amplifyapp.com",
       "http://localhost:5173",
       "https://main.d13rik7kqr4223.amplifyapp.com",
     ],
