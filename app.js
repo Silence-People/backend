@@ -49,10 +49,9 @@ app.get("/allpositions", async (req, res) => {
   let allPositions = await Position.find({});
   res.send(JSON.stringify(allPositions));
 });
-
+app.post("/", userVerification);
 app.post("/signup", Signup);
 app.post("/login", Login);
-app.post("/", userVerification);
 
 app.listen(port, () => {
   console.log(`The app is running on port ${port}`);
