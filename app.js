@@ -16,14 +16,17 @@ const port = process.env.PORT || 8080;
 
 const uri = process.env.MONGO_URL;
 
+app.use(cookieParser());
+app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: [
+      "http://localhost:5173",
+      "https://main.d13rik7kqr4223.amplifyapp.com",
+    ],
     credentials: true,
   })
 );
-app.use(cookieParser());
-app.use(bodyParser.json());
 
 main()
   .then(() => {
