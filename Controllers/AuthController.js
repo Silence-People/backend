@@ -15,7 +15,6 @@ module.exports.Signup = async (req, res, next) => {
       withCredentials: true,
       httpOnly: false,
       sameSite: "none",
-      secure: true,
       domain: ".amplifyapp.com",
     });
     console.log("Cookie set:", res.getHeader("Set-Cookie"));
@@ -46,8 +45,7 @@ module.exports.Login = async (req, res, next) => {
     res.cookie("token", token, {
       withCredentials: true,
       httpOnly: false,
-      sameSite: "none",
-      secure: true,
+      sameSite: "lax",
       domain: ".amplifyapp.com",
     });
     console.log("Cookie set:", res.getHeader("Set-Cookie"));
