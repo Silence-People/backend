@@ -16,8 +16,6 @@ const port = process.env.PORT || 8080;
 
 const uri = process.env.MONGO_URL;
 
-app.use(cookieParser());
-app.use(bodyParser.json());
 app.use(
   cors({
     origin: [
@@ -27,6 +25,8 @@ app.use(
     credentials: true,
   })
 );
+app.use(cookieParser());
+app.use(bodyParser.json());
 
 main()
   .then(() => {
